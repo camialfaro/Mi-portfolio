@@ -1,0 +1,190 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Scroll suave */
+html {
+    scroll-behavior: smooth;
+  }
+
+
+  /* Encabezado / Navbar */
+  header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.561); /* semi-transparente */
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 7px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+    align-items: center;
+    max-width: 1200px; /* opcional para centrar */
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 90px; /* ajusta el tamaño del logo */
+  }
+  
+  header nav ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+  }
+  
+  header nav ul li {
+    margin: 0 40px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #ffffff;
+  }
+  
+   /* ---------------------------
+        inicio
+----------------------------*/
+  .inicio {
+    min-height: 110vh; /* mínimo 100% de pantalla */
+    padding-top: 50vh;
+    padding-bottom: 340px;
+    background-image: url("../img/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    font-family: Arial, sans-serif;
+  }
+  
+ /* ---------------------------
+        Sobre mí
+----------------------------*/
+#sobre-mi {
+  text-align: center;
+    min-height: 100vh; /* mínimo 100% de pantalla */
+    padding-top: 100px;   
+    padding-bottom: 10px;
+    background-image: url("../img/background2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.descripcion-img {  /* imagen */
+    display: block;           /* hace que se comporte como bloque */
+    margin: 100px auto;
+    max-width: 70%;           /* ajusta ancho máximo al 80% del contenedor */
+    height: auto;             /* mantiene proporción original */
+  }
+
+/* ---------------------------
+        Proyectos
+----------------------------*/
+#proyectos {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #000000; /* color de fondo distinto */
+  font-family: Arial, sans-serif;
+}
+
+#proyectos h2 {
+  margin-bottom: 20px;
+  color: #457b9d;
+}
+
+#proyectos p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas arriba */
+  gap: 40px;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+/* Estrellas de la fila de abajo */
+.proyectos-grid .proyecto:nth-child(4),
+.proyectos-grid .proyecto:nth-child(5) {
+  grid-column: span 1;      /* ocupa 1 columna cada una */
+}
+
+/* Ajuste individual manual: puedes modificar estos valores */
+.proyectos-grid .proyecto:nth-child(1) { 
+  transform: translateX(0px) translateY(0px); /* ajusta horizontal y vertical */}
+  .proyectos-grid .proyecto:nth-child(2) { 
+  transform: translateX(0px) translateY(0px); /* ajusta horizontal y vertical */}
+  .proyectos-grid .proyecto:nth-child(3) { 
+  transform: translateX(0px) translateY(0px); /* ajusta horizontal y vertical */}
+  .proyectos-grid .proyecto:nth-child(4) { 
+  transform: translateX(250px) translateY(0px); /* ajusta horizontal y vertical */}
+  .proyectos-grid .proyecto:nth-child(5) { 
+  transform: translateX(250px) translateY(0px); /* ajusta horizontal y vertical */}
+
+/* Estilo de cada estrella */
+.proyecto {
+  text-align: center;
+}
+
+.estrella {
+  width: 170px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efecto al pasar el mouse */
+.estrella:hover {
+  transform: scale(1.2); /* se agranda suavemente */
+  filter: drop-shadow(0 0 15px rgba(251, 212, 253, 0.541)); /* brilla */
+}
+
+/* Títulos debajo */
+.proyecto h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #fff; /* cámbialo si el fondo es claro */
+}
+
+/* ---------------------------
+        Contacto
+----------------------------*/
+#contacto {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #000000; /* color de fondo distinto */
+  font-family: Arial, sans-serif;
+}
+
+#contacto h2 {
+  margin-bottom: 20px;
+  color: #e63946;
+}
+
+#contacto p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+}

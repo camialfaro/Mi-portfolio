@@ -110,6 +110,7 @@ html {
     background-image: url("../img/fondo\ vistas.jpg");
     background-size: cover;
     background-position: center;
+    overflow: hidden; /* evita scroll horizontal */
   }
 
   .prev, .next {
@@ -138,6 +139,8 @@ html {
     margin: 0 auto;  /* centrado horizontal */
     max-width: 100%;           /* ajusta ancho máximo al 80% del contenedor */
     height: auto;                /* mantiene proporción original */
+    flex-shrink: 0; /* evita que se compriman */
+    width: 100%; /* cada imagen ocupa el 100% del contenedor */
   }
 
   
@@ -145,21 +148,215 @@ html {
   #escenarios {
      background-color: black ;
     background-position: center;
+    padding: 40px;
   }
 
   .descripcion-img {  /* imagen */
     display: block;           /* hace que se comporte como bloque */
     max-width: 50%;           /* ajusta ancho máximo al 80% del contenedor */
     height: auto;             /* mantiene proporción original */
+    margin: 50px auto;
   }
 
   #props {
      background-color: black ;
     background-position: center;
+    padding: 40px;
   }
 
-  .descripcion-img {  /* imagen */
-    display: block;           /* hace que se comporte como bloque */
-    max-width: 50%;           /* ajusta ancho máximo al 80% del contenedor */
-    height: auto;             /* mantiene proporción original */
+/* ---------------------------
+        RESPONSIVE DESIGN
+----------------------------*/
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  header nav {
+    padding: 0 15px;
   }
+  
+  header nav ul li {
+    margin: 0 25px;
+  }
+  
+  .logopelicula img {
+    height: 85px;
+  }
+  
+  .intro-img {
+    max-width: 55%;
+  }
+  
+  .descripcion-img {
+    max-width: 60%;
+  }
+  
+  .prev, .next {
+    font-size: 1.2rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Móvil grande (481px - 767px) */
+@media screen and (max-width: 767px) {
+  header nav {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+  
+  header nav ul {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  header nav ul li {
+    margin: 5px 15px;
+  }
+  
+  header nav ul li a {
+    font-size: 14px;
+  }
+  
+  .logopelicula img {
+    height: 70px;
+  }
+  
+  /* Storytelling */
+  #Storytelling {
+    height: auto;
+    min-height: 50vh;
+    padding: 20px;
+  }
+  
+  .intro-img {
+    margin: 50px auto;
+    max-width: 75%;
+  }
+  
+  /* Personajes */
+  .personajes {
+    height: auto;
+    min-height: 70vh;
+    padding: 20px;
+  }
+  
+  .prev, .next {
+    font-size: 1rem;
+    padding: 5px 8px;
+    top: 45%;
+  }
+  
+  .prev { left: 10px; }
+  .next { right: 10px; }
+  
+  /* Escenarios y Props */
+  #escenarios,
+  #props {
+    padding: 20px;
+  }
+  
+  .descripcion-img {
+    max-width: 80%;
+    margin: 30px auto;
+  }
+}
+
+/* Móvil pequeño (hasta 480px) */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 5px 0;
+  }
+  
+  header nav {
+    padding: 8px 10px;
+  }
+  
+  header nav ul li {
+    margin: 3px 8px;
+  }
+  
+  header nav ul li a {
+    font-size: 12px;
+  }
+  
+  .logopelicula img {
+    height: 60px;
+  }
+  
+  /* Portada */
+  .portada1 {
+    padding: 20px;
+  }
+  
+  /* Storytelling */
+  #Storytelling {
+    height: auto;
+    min-height: 40vh;
+    padding: 15px;
+  }
+  
+  .intro-img {
+    margin: 30px auto;
+    max-width: 90%;
+  }
+  
+  /* Personajes */
+  .personajes {
+    height: auto;
+    min-height: 60vh;
+    padding: 15px;
+  }
+  
+  .prev, .next {
+    font-size: 0.9rem;
+    padding: 4px 6px;
+    top: 40%;
+  }
+  
+  .prev { left: 5px; }
+  .next { right: 5px; }
+  
+  /* Escenarios y Props */
+  #escenarios,
+  #props {
+    padding: 15px;
+  }
+  
+  .descripcion-img {
+    max-width: 95%;
+    margin: 20px auto;
+  }
+}
+
+/* Móvil muy pequeño (hasta 320px) */
+@media screen and (max-width: 320px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  header nav ul li {
+    margin: 2px 5px;
+  }
+  
+  .logopelicula img {
+    height: 50px;
+  }
+  
+  .prev, .next {
+    font-size: 0.8rem;
+    padding: 3px 5px;
+  }
+  
+  .intro-img,
+  .descripcion-img {
+    max-width: 100%;
+  }
+  
+  #Storytelling,
+  .personajes,
+  #escenarios,
+  #props {
+    padding: 10px;
+  }
+}

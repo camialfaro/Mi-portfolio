@@ -1,0 +1,408 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Scroll suave */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Encabezado / Navbar */
+  header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.561); /* semi-transparente */
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 7px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+    align-items: center;
+    max-width: 1200px; /* opcional para centrar */
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logopelicula img {
+    height: 120px; /* ajusta el tamaño del logo */
+  }
+  
+  header nav ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+  }
+  
+  header nav ul li {
+    margin: 0 40px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #ffffff;
+  }
+  
+
+   /* ---------------------------
+        inicio
+----------------------------*/
+  .portada1 {
+     height: 100vh;
+     padding: 40px; /* no exceda la pantalla */
+    background-image: url("../img/portadanocolapses.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    font-family: Arial, sans-serif;
+  }
+
+     /* ---------------------------
+        Storytelling
+----------------------------*/
+
+  #Introduccion {
+ height: 70vh; /* más corto que 100vh, puedes ajustar el valor */
+    padding: 30px;
+    padding-bottom: 40px;
+    background-image: url("../img/morsado 2.png");
+    background-size: cover;       /* mantiene proporción */
+    background-position: top;     /* pega la imagen arriba */
+    background-repeat: no-repeat; /* evita repeticiones */
+
+  }
+
+.intro-img{
+     display: block;           /* hace que se comporte como bloque */
+    margin: 10px auto;
+    max-width: 70%;           /* ajusta ancho máximo al 80% del contenedor */
+    height: auto;             /* mantiene proporción original */
+  }
+
+  #Elementos {
+    height:200vh; /* más corto que 100vh, puedes ajustar el valor */
+    padding: 20px;
+    padding-bottom: 20px;
+    background-image: url("../img/tablero.jpg");
+    background-size: cover;       /* mantiene proporción */
+    background-position: top;     /* pega la imagen arriba */
+    background-repeat: no-repeat; /* evita repeticiones */
+  }
+
+  .fondomorado-img{
+     display: block;           /* hace que se comporte como bloque */
+    margin: 0px auto;
+    max-width: 100%;           /* ajusta ancho máximo al 80% del contenedor */
+    height: auto;             /* mantiene proporción original */
+  }
+
+
+
+
+   .personajes {
+    position: relative; /* clave para que los botones se queden aquí */
+    height: 100vh;
+     padding: 40px; /* no exceda la pantalla */
+    padding-bottom: 40px;
+    background-image: url("../img/fondonocolapses.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* evita scroll horizontal */
+  }
+
+  .prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 20;
+}
+.prev { left: 16px; }
+.next { right: 16px; }
+
+  .vistas {
+  display: flex;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); /* transición más suave */
+  }
+
+  .vistas-img {  /* imagen */
+    display: block;           /* hace que se comporte como bloque */
+    margin: 0 auto;  /* centrado horizontal */
+    max-width: 100%;           /* ajusta ancho máximo al 80% del contenedor */
+    height: auto;                /* mantiene proporción original */
+    flex-shrink: 0; /* evita que se compriman */
+    width: 100%; /* cada imagen ocupa el 100% del contenedor */
+  }
+   /* ---------------------------
+        personajes
+----------------------------*/
+
+ 
+
+  .escenarios {
+  position: relative;   /* importante: referencia para los botones */
+  height: 140vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: none;}
+
+
+
+  .prev2, .next2 {
+  position: absolute;
+  top: 50%;                   /* centro vertical */
+  transform: translateY(-50%);/* lo baja justo al medio */
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 20;
+}
+.prev2 { left: 16px; }
+.next2 { right: 16px; }
+
+
+ .escenarios2 {
+  display: flex;
+  height: 100%;          /* que ocupe todo el contenedor */
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.escenarios-img {
+  flex-shrink: 0;        /* no se encogen */
+  width: 100%;           /* cada imagen ocupa el 100% del carrusel */
+  height: 100%;          /* llena toda la altura */
+  object-fit: cover;     /* recorta para cubrir sin deformarse */
+  display: block;}
+
+  
+
+  
+
+ 
+
+/* ---------------------------
+        RESPONSIVE DESIGN
+----------------------------*/
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  header nav {
+    padding: 0 15px;
+  }
+  
+  header nav ul li {
+    margin: 0 25px;
+  }
+  
+  .logopelicula img {
+    height: 85px;
+  }
+  
+  .intro-img {
+    max-width: 55%;
+  }
+  
+  .descripcion-img {
+    max-width: 60%;
+  }
+  
+  .prev, .next {
+    font-size: 1.2rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Móvil grande (481px - 767px) */
+@media screen and (max-width: 767px) {
+  header nav {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+  
+  header nav ul {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  header nav ul li {
+    margin: 5px 15px;
+  }
+  
+  header nav ul li a {
+    font-size: 14px;
+  }
+  
+  .logopelicula img {
+    height: 70px;
+  }
+  
+  /* Storytelling */
+  #Introduccion {
+    height: auto;
+    min-height: 50vh;
+    padding: 20px;
+  }
+  
+  .intro-img {
+    margin: 50px auto;
+    max-width: 75%;
+  }
+  
+  /* Personajes */
+  .mascotas {
+    height: auto;
+    min-height: 70vh;
+    padding: 20px;
+  }
+  
+  .prev, .next {
+    font-size: 1rem;
+    padding: 5px 8px;
+    top: 45%;
+  }
+  
+  .prev { left: 10px; }
+  .next { right: 10px; }
+  
+  /* Escenarios y Props */
+  #escenarios,
+  #props {
+    padding: 20px;
+  }
+  
+  .descripcion-img {
+    max-width: 80%;
+    margin: 30px auto;
+  }
+}
+
+/* Móvil pequeño (hasta 480px) */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 5px 0;
+  }
+  
+  header nav {
+    padding: 8px 10px;
+  }
+  
+  header nav ul li {
+    margin: 3px 8px;
+  }
+  
+  header nav ul li a {
+    font-size: 12px;
+  }
+  
+  .logopelicula img {
+    height: 60px;
+  }
+  
+  /* Portada */
+  .portada1 {
+    padding: 20px;
+  }
+  
+  /* Storytelling */
+  #Storytelling {
+    height: auto;
+    min-height: 40vh;
+    padding: 15px;
+  }
+  
+  .intro-img {
+    margin: 30px auto;
+    max-width: 90%;
+  }
+  
+  /* Personajes */
+  .personajes {
+    height: auto;
+    min-height: 60vh;
+    padding: 15px;
+  }
+  
+  .prev, .next {
+    font-size: 0.9rem;
+    padding: 4px 6px;
+    top: 40%;
+  }
+  
+  .prev { left: 5px; }
+  .next { right: 5px; }
+  
+  /* Escenarios y Props */
+  #escenarios,
+  #props {
+    padding: 15px;
+  }
+  
+  .descripcion-img {
+    max-width: 95%;
+    margin: 20px auto;
+  }
+}
+
+/* Móvil muy pequeño (hasta 320px) */
+@media screen and (max-width: 320px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  header nav ul li {
+    margin: 2px 5px;
+  }
+  
+  .logopelicula img {
+    height: 50px;
+  }
+  
+  .prev, .next {
+    font-size: 0.8rem;
+    padding: 3px 5px;
+  }
+  
+  .intro-img,
+  .descripcion-img {
+    max-width: 100%;
+  }
+  
+  #Storytelling,
+  .personajes,
+  #escenarios,
+  #props {
+    padding: 10px;
+  }
+}

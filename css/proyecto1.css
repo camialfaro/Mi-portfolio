@@ -145,23 +145,88 @@ html {
 
   
 
-  #escenarios {
-     background-color: black ;
+  .escenarios {
+  position: relative;
+  height: 100vh;        /* carrusel ocupa toda la pantalla */
+  overflow: hidden;     /* evita scroll horizontal */
+  margin: 0;
+  padding: 0;           /* eliminamos padding que creaba bordes */
+  background: none;     /* sin fondo */
+}
+
+
+
+  .prev2, .next2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 20;
+}
+.prev2 { left: 16px; }
+.next2 { right: 16px; }
+
+
+ .escenarios2 {
+  display: flex;
+  height: 100%;          /* que ocupe todo el contenedor */
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.escenarios-img {
+  flex-shrink: 0;        /* no se encogen */
+  width: 100%;           /* cada imagen ocupa el 100% del carrusel */
+  height: 100%;          /* llena toda la altura */
+  object-fit: cover;     /* recorta para cubrir sin deformarse */
+  display: block;}
+
+
+
+  .props {
+    position: relative; /* clave para que los botones se queden aquí */
+    height: 100vh;
+     padding: 40px; /* no exceda la pantalla */
+    padding-bottom: 40px;
+    background-image: url("../img/fondo\ vistas.jpg");
+    background-size: cover;
     background-position: center;
-    padding: 40px;
+    overflow: hidden; /* evita scroll horizontal */
   }
 
-  .descripcion-img {  /* imagen */
+  .prev3, .next3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 20;
+}
+.prev3 { left: 16px; }
+.next3 { right: 16px; }
+
+  .props2 {
+  display: flex;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); /* transición más suave */
+  }
+
+  .props-img {  /* imagen */
     display: block;           /* hace que se comporte como bloque */
-    max-width: 50%;           /* ajusta ancho máximo al 80% del contenedor */
-    height: auto;             /* mantiene proporción original */
-    margin: 50px auto;
-  }
-
-  #props {
-     background-color: black ;
-    background-position: center;
-    padding: 40px;
+    margin: 0 auto;  /* centrado horizontal */
+    max-width: 100%;           /* ajusta ancho máximo al 80% del contenedor */
+    height: auto;                /* mantiene proporción original */
+    flex-shrink: 0; /* evita que se compriman */
+    width: 100%; /* cada imagen ocupa el 100% del contenedor */
   }
 
 /* ---------------------------

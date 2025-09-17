@@ -173,24 +173,105 @@ html {
 #contacto {
   padding: 100px 20px;
   text-align: center;
-  background-color: #000000; /* color de fondo distinto */
+  background-color: #000000;
   font-family: Arial, sans-serif;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #contacto h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #e63946;
+  font-size: 2.5rem;
 }
 
-#contacto p {
+.contacto-contenido {
   max-width: 600px;
   margin: 0 auto;
-  color: #333;
+}
+
+.contacto-item {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contacto-item p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.contacto-item a {
+  color: #e63946;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contacto-item a:hover {
+  color: #ff6b7a;
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+.instagram-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(225, 48, 108, 0.4);
+  color: white;
+}
+
+.instagram-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 /* ---------------------------
         RESPONSIVE DESIGN
 ----------------------------*/
+
+/* Desktop grande (1200px+) */
+@media screen and (min-width: 1200px) {
+  .proyectos-grid .proyecto:nth-child(4) { 
+    transform: translateX(300px) translateY(0px);
+  }
+  .proyectos-grid .proyecto:nth-child(5) { 
+    transform: translateX(300px) translateY(0px);
+  }
+}
+
+/* Tablet grande (1025px - 1199px) */
+@media screen and (max-width: 1199px) and (min-width: 1025px) {
+  header nav {
+    padding: 0 15px;
+  }
+  
+  .proyectos-grid .proyecto:nth-child(4) { 
+    transform: translateX(200px) translateY(0px);
+  }
+  .proyectos-grid .proyecto:nth-child(5) { 
+    transform: translateX(200px) translateY(0px);
+  }
+}
 
 /* Tablet (768px - 1024px) */
 @media screen and (max-width: 1024px) {
@@ -206,6 +287,19 @@ html {
     height: 80px;
   }
   
+  /* Inicio */
+  .inicio {
+    padding-top: 40vh;
+    padding-bottom: 250px;
+  }
+  
+  /* Sobre mí */
+  .descripcion-img {
+    margin: 80px auto;
+    max-width: 80%;
+  }
+  
+  /* Proyectos */
   .proyectos-grid {
     gap: 30px;
   }
@@ -216,10 +310,23 @@ html {
   
   /* Ajuste de las estrellas 4 y 5 para tablet */
   .proyectos-grid .proyecto:nth-child(4) { 
-    transform: translateX(200px) translateY(0px);
+    transform: translateX(150px) translateY(0px);
   }
   .proyectos-grid .proyecto:nth-child(5) { 
-    transform: translateX(200px) translateY(0px);
+    transform: translateX(150px) translateY(0px);
+  }
+  
+  /* Contacto */
+  #contacto {
+    padding: 80px 20px;
+  }
+  
+  #contacto h2 {
+    font-size: 2.2rem;
+  }
+  
+  .contacto-item p {
+    font-size: 1.1rem;
   }
 }
 
@@ -232,10 +339,12 @@ html {
   
   header nav ul {
     margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   header nav ul li {
-    margin: 0 15px;
+    margin: 5px 15px;
   }
   
   header nav ul li a {
@@ -298,7 +407,27 @@ html {
   
   /* Contacto */
   #contacto {
-    padding: 80px 15px;
+    padding: 60px 15px;
+    min-height: 50vh;
+  }
+  
+  #contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+  .contacto-item {
+    margin: 15px 0;
+    padding: 12px;
+  }
+  
+  .contacto-item p {
+    font-size: 1rem;
+  }
+  
+  .instagram-link {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
 
@@ -313,7 +442,7 @@ html {
   }
   
   header nav ul li {
-    margin: 0 8px;
+    margin: 3px 8px;
   }
   
   header nav ul li a {
@@ -366,14 +495,69 @@ html {
   
   /* Contacto */
   #contacto {
-    padding: 60px 10px;
+    padding: 50px 10px;
+    min-height: 45vh;
+  }
+  
+  #contacto h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .contacto-item {
+    margin: 12px 0;
+    padding: 10px;
+  }
+  
+  .contacto-item p {
+    font-size: 0.9rem;
+  }
+  
+  .instagram-link {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+  
+  .instagram-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Móvil muy pequeño (hasta 360px) */
+@media screen and (max-width: 360px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  header nav ul li {
+    margin: 2px 5px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .estrella {
+    width: 100px;
+  }
+  
+  .proyecto h3 {
+    font-size: 12px;
   }
   
   #contacto h2 {
     font-size: 1.5rem;
   }
   
-  #contacto p {
-    font-size: 14px;
+  .contacto-item p {
+    font-size: 0.8rem;
+  }
+  
+  .instagram-link {
+    padding: 6px 12px;
+    font-size: 0.7rem;
   }
 }

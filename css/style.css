@@ -119,29 +119,15 @@ html {
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas arriba */
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 60px 80px; /* vertical horizontal */
   justify-items: center;
+  align-items: center;
   margin-top: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* Estrellas de la fila de abajo */
-.proyectos-grid .proyecto:nth-child(4),
-.proyectos-grid .proyecto:nth-child(5) {
-  grid-column: span 1;      /* ocupa 1 columna cada una */
-}
-
-/* Ajuste individual manual: puedes modificar estos valores */
-.proyectos-grid .proyecto:nth-child(1) { 
-  transform: translateX(0px) translateY(0px); /* ajusta horizontal y vertical */}
-  .proyectos-grid .proyecto:nth-child(2) { 
-  transform: translateX(0px) translateY(0px); /* ajusta horizontal y vertical */}
-  .proyectos-grid .proyecto:nth-child(3) { 
-  transform: translateX(0px) translateY(0px); /* ajusta horizontal y vertical */}
-  .proyectos-grid .proyecto:nth-child(4) { 
-  transform: translateX(250px) translateY(0px); /* ajusta horizontal y vertical */}
-  .proyectos-grid .proyecto:nth-child(5) { 
-  transform: translateX(250px) translateY(0px); /* ajusta horizontal y vertical */}
 
 /* Estilo de cada estrella */
 .proyecto {
@@ -251,11 +237,8 @@ html {
 
 /* Desktop grande (1200px+) */
 @media screen and (min-width: 1200px) {
-  .proyectos-grid .proyecto:nth-child(4) { 
-    transform: translateX(300px) translateY(0px);
-  }
-  .proyectos-grid .proyecto:nth-child(5) { 
-    transform: translateX(300px) translateY(0px);
+  .proyectos-grid {
+    gap: 70px 100px;
   }
 }
 
@@ -265,11 +248,8 @@ html {
     padding: 0 15px;
   }
   
-  .proyectos-grid .proyecto:nth-child(4) { 
-    transform: translateX(200px) translateY(0px);
-  }
-  .proyectos-grid .proyecto:nth-child(5) { 
-    transform: translateX(200px) translateY(0px);
+  .proyectos-grid {
+    gap: 60px 80px;
   }
 }
 
@@ -301,19 +281,11 @@ html {
   
   /* Proyectos */
   .proyectos-grid {
-    gap: 30px;
+    gap: 50px 60px;
   }
   
   .estrella {
     width: 150px;
-  }
-  
-  /* Ajuste de las estrellas 4 y 5 para tablet */
-  .proyectos-grid .proyecto:nth-child(4) { 
-    transform: translateX(150px) translateY(0px);
-  }
-  .proyectos-grid .proyecto:nth-child(5) { 
-    transform: translateX(150px) translateY(0px);
   }
   
   /* Contacto */
@@ -377,24 +349,9 @@ html {
   }
   
   .proyectos-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 50px;
     margin-top: 40px;
-  }
-  
-  /* Resetear transformaciones para móvil */
-  .proyectos-grid .proyecto:nth-child(1),
-  .proyectos-grid .proyecto:nth-child(2),
-  .proyectos-grid .proyecto:nth-child(3),
-  .proyectos-grid .proyecto:nth-child(4),
-  .proyectos-grid .proyecto:nth-child(5) { 
-    transform: none;
-  }
-  
-  /* Centrar el último proyecto */
-  .proyectos-grid .proyecto:nth-child(5) {
-    grid-column: 1 / -1;
-    justify-self: center;
   }
   
   .estrella {
@@ -475,17 +432,13 @@ html {
   }
   
   .proyectos-grid {
-    grid-template-columns: 1fr; /* 1 columna */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 40px;
     margin-top: 30px;
   }
   
-  .proyectos-grid .proyecto:nth-child(5) {
-    grid-column: auto;
-  }
-  
   .estrella {
-    width: 120px;
+    width: 110px;
   }
   
   .proyecto h3 {
@@ -541,7 +494,7 @@ html {
   }
   
   .estrella {
-    width: 100px;
+    width: 90px;
   }
   
   .proyecto h3 {

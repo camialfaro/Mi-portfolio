@@ -14,7 +14,7 @@ html {
   header {
     position: fixed;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.561); /* semi-transparente */
+    background-color: rgba(40, 62, 114, 0.561); /* semi-transparente */
     top: 0;
     left: 0;
     z-index: 100;
@@ -63,7 +63,7 @@ html {
   .portada1 {
      height: 100vh;
      padding: 40px; /* no exceda la pantalla */
-    background-image: url("../img/fondochile.jpg");
+    background-image: url("../img/paisaje1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -343,9 +343,8 @@ html {
   
   /* Personajes */
   .mascotas {
-    height: auto;
-    min-height: 70vh;
-    padding: 20px;
+    height: 150;
+    min-height: 100vh;
   }
   
   .prev, .next {

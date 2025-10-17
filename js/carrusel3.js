@@ -2,7 +2,7 @@
 
 // Esperar a que el DOM cargue
 window.addEventListener('DOMContentLoaded', () => {
-  const contenedor = document.querySelector('.props2');
+  const contenedor = document.querySelector('.propsi');
   const slides = document.querySelectorAll('.props-img');
   const prevBtn = document.querySelector('.prev3');
   const nextBtn = document.querySelector('.next3');

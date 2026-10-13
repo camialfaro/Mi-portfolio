@@ -49,3 +49,9 @@ Edita `src/data/projects.js` para modificar un proyecto. Cada sección define su
 Los carruseles avanzan cada 7 segundos, se pausan al pasar el cursor o enfocar sus controles y permiten avance manual, pausa y flechas del teclado cuando el carrusel tiene el foco. Respetan la preferencia de movimiento reducido y limpian sus temporizadores al desmontarse. Cada galería tiene estado independiente.
 
 Se corrigieron anclas que no existían y el nombre mal escrito del fondo de introducción de No colapses. El tablero de No colapses se muestra desde su imagen existente, sin un `<img src="">`. Se eliminaron los estilos y scripts duplicados y una entrada de submódulo autorreferente sin configuración.
+
+## Animaciones
+
+Las estrellas flotan con ritmos distintos y responden al cursor o al foco con brillo del mismo color. Los títulos y las ilustraciones aparecen al entrar en pantalla; la portada tiene una entrada cinematográfica suave. La navegación y los controles incluyen microinteracciones. Los navegadores que admiten transiciones entre documentos también animan el paso entre páginas; los demás conservan la navegación normal.
+
+`src/styles/motion.css` centraliza tiempos y efectos. `src/hooks/useReveal.js` activa las entradas una sola vez mediante IntersectionObserver y desconecta sus observadores al desmontarse. El contenido queda visible si esa API no está disponible. La preferencia `prefers-reduced-motion` desactiva las animaciones y la reproducción automática de los carruseles.

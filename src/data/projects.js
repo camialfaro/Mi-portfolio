@@ -1,7 +1,7 @@
 // Content is separate from presentation; add images/sections here.
 export const projects = [
   {
-    slug: 'proyecto1', title: 'Proyecto 1', name: 'Proyecto de película',
+    slug: 'proyecto1', accent: '#ff7278', title: 'Proyecto 1', name: 'Proyecto de película',
     path: 'pages/proyecto1.html', star: 'rojo.png',
     logo: 'logopeli.png', cover: 'peli1.png',
     sections: [
@@ -12,7 +12,7 @@ export const projects = [
     ],
   },
   {
-    slug: 'juegos', title: 'Proyecto 2', name: 'Juegos Olímpicos',
+    slug: 'juegos', accent: '#41cfff', title: 'Proyecto 2', name: 'Juegos Olímpicos',
     path: 'pages/juegos.html', star: 'azul.png',
     logo: 'logo olimpicos.png', cover: 'paisaje1.png',
     sections: [
@@ -22,7 +22,7 @@ export const projects = [
     ],
   },
   {
-    slug: 'proyecto3', title: 'Proyecto 3', name: 'Proyecto de bruja',
+    slug: 'proyecto3', accent: '#c792ff', title: 'Proyecto 3', name: 'Proyecto de bruja',
     path: 'pages/proyecto3.html', star: 'morado.png',
     logo: 'logobruja.png', cover: 'portadabruja.png',
     sections: [
@@ -33,7 +33,7 @@ export const projects = [
     ],
   },
   {
-    slug: 'proyecto4', title: 'Proyecto 4', name: 'No colapses',
+    slug: 'proyecto4', accent: '#ffd06e', title: 'Proyecto 4', name: 'No colapses',
     path: 'pages/proyecto4.html', star: 'amarillo.png',
     logo: 'logo final.png', cover: 'portadanocolapses.png',
     sections: [

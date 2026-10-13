@@ -1,12 +1,14 @@
+import useReveal from '../../hooks/useReveal';
 import { contact } from '../../data/site';
 
-const cardClass = 'my-5 rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm';
+const cardClass = 'contact-card my-5 rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm';
 
 export default function ContactSection() {
+  const ref = useReveal();
   return (
     <section id="contacto" className="flex min-h-[60vh] flex-col items-center justify-center bg-black px-4 py-20 text-center lg:py-[100px]">
       <h2 className="mb-8 text-3xl font-bold text-portfolio-red md:text-[2.5rem]">Contacto</h2>
-      <div className="w-full max-w-[600px] text-base md:text-lg">
+      <div ref={ref} className="reveal w-full max-w-[600px] text-base md:text-lg">
         <p className={`${cardClass} break-words`}>Correo: <a href={`mailto:${contact.email}`} className="font-bold text-portfolio-red hover:text-[#ff6b7a]">{contact.email}</a></p>
         <div className={cardClass}>
           <p>Instagram:</p>

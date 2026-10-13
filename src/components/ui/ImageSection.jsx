@@ -1,3 +1,4 @@
+import useReveal from '../../hooks/useReveal';
 import { imagePath } from '../../utils/paths';
 
 const variants = {
@@ -7,12 +8,13 @@ const variants = {
 };
 
 export default function ImageSection({ id, label, image, background, variant = 'default' }) {
+  const ref = useReveal();
   return (
     <section id={id} aria-label={label}
       className={`bg-cover bg-top bg-no-repeat p-4 md:p-10 ${variant === 'default' ? 'min-h-screen' : 'min-h-[50vh] md:min-h-[70vh]'}`}
       style={background ? { backgroundImage: `url("${imagePath(background)}")` } : undefined}>
       <h2 className="sr-only">{label}</h2>
-      <img src={imagePath(image)} alt={label} loading="lazy" className={`${variants[variant]} h-auto`} />
+      <img ref={ref} src={imagePath(image)} alt={label} loading="lazy" className={`reveal ${variants[variant]} h-auto`} />
     </section>
   );
 }

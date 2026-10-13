@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import useReveal from '../../hooks/useReveal';
 import { imagePath } from '../../utils/paths';
 
-const controlClass = 'absolute top-1/2 z-10 -translate-y-1/2 rounded-md bg-black/60 px-3 py-2 text-xl hover:bg-black/80';
+const controlClass = 'gallery-control absolute top-1/2 z-10 -translate-y-1/2 rounded-md bg-black/60 px-3 py-2 text-xl hover:bg-black/80';
 
 export default function Carousel({ id, label, images, background, fit = 'contain', padded = false, tall = false }) {
+  const ref = useReveal();
   const [index, setIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
@@ -26,9 +28,9 @@ export default function Carousel({ id, label, images, background, fit = 'contain
   }, [playing, hovered, focused, reducedMotion, total, index]);
 
   return (
-    <section id={id} role="region" aria-roledescription="carrusel" aria-label={label}
+    <section ref={ref} id={id} role="region" aria-roledescription="carrusel" aria-label={label}
       tabIndex={0}
-      className={`relative overflow-hidden bg-cover bg-center ${tall ? 'h-screen md:h-[140vh]' : 'h-[70vh] md:h-screen'} ${padded ? 'p-4 md:p-10' : ''}`}
+      className={`reveal relative overflow-hidden bg-cover bg-center ${tall ? 'h-screen md:h-[140vh]' : 'h-[70vh] md:h-screen'} ${padded ? 'p-4 md:p-10' : ''}`}
       style={background ? { backgroundImage: `url("${imagePath(background)}")` } : undefined}
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       onFocus={() => setFocused(true)}
@@ -47,7 +49,7 @@ export default function Carousel({ id, label, images, background, fit = 'contain
             aria-label={`${slideIndex + 1} de ${total}`} aria-hidden={slideIndex !== index}
             className="h-full w-full shrink-0">
             <img src={imagePath(image)} alt={`${label}: ${image.replace(/\.[^.]+$/, '')}`}
-              loading="lazy" className={`block h-full w-full ${fit === 'cover' ? 'object-cover' : 'object-contain'}`} />
+              loading="lazy" className={`gallery-image block h-full w-full ${fit === 'cover' ? 'object-cover' : 'object-contain'}`} />
           </div>
         ))}
       </div>

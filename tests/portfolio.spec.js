@@ -63,3 +63,34 @@ test('autoplay respects pause and reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await expect(gallery.getByRole('button', { name: 'Reproducir' })).toHaveCount(0);
 });
+
+test('animated project cards reveal on arrival and remain navigable', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Proyectos', exact: true }).click();
+  const cards = page.locator('.project-card');
+  await expect(cards.first()).toHaveAttribute('data-reveal', 'visible');
+  await expect.poll(() => cards.first().evaluate((card) => getComputedStyle(card).opacity)).toBe('1');
+  await expect(cards.first().locator('img')).toHaveCSS('animation-name', 'star-float');
+  const link = page.getByRole('link', { name: 'Ver Proyecto 1', exact: true });
+  await page.keyboard.press('Tab');
+  await link.focus();
+  await expect.poll(() => link.locator('img').evaluate((image) => getComputedStyle(image).filter)).not.toBe('none');
+  await page.screenshot({ path: `/tmp/portfolio-motion-${test.info().project.name}.png` });
+  await link.press('Enter');
+  await expect(page).toHaveURL(/pages\/proyecto1.html$/);
+  await page.getByRole('link', { name: 'Storytelling', exact: true }).click();
+  await expect(page.locator('#Storytelling img')).toHaveAttribute('data-reveal', 'visible');
+});
+
+test('reduced motion keeps content visible and disables decorative motion', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Proyectos', exact: true }).click();
+  const card = page.locator('.project-card').first();
+  await expect(card).toHaveCSS('opacity', '1');
+  await expect(card.locator('img')).toHaveCSS('animation-name', 'none');
+  await expect(page.locator('.hero-art')).toHaveCSS('animation-name', 'none');
+  await expect(page.locator('.site-header')).toHaveCSS('animation-name', 'none');
+  await expect(page.locator('#sobre-mi img')).toHaveCSS('opacity', '1');
+});

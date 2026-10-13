@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Arial, sans-serif;
+  --color-portfolio-blue: #457b9d;
+  --color-portfolio-red: #e63946;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply m-0 bg-black font-sans text-white; }
+  section[id] { scroll-margin-top: 150px; }
+  a:focus-visible, button:focus-visible {
+    @apply outline-2 outline-offset-4 outline-white;
+  }
+  button { @apply cursor-pointer; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
